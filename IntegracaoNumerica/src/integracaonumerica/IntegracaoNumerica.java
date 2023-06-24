@@ -7,28 +7,27 @@ import java.nio.file.Paths;
 
 public class IntegracaoNumerica {
     public static void main(String[] args) {
-        String caminhoArquivo = "Caminho Arquivo";
+        String caminhoArquivo = "C:/Users/biels/Desktop/dados.dat";
         Path path = Paths.get(caminhoArquivo);
+        Calculo integracao = new Calculo();
         
         double a = 0.0;
         double b = 0.0;
-        int numSubintervalos = 0;
+        double numSubintervalos = 0;
         
         try {
             String dados = new String(Files.readAllBytes(path));
 
             String[] valores = dados.split("\n");
-
-            a = Double.parseDouble(valores[0]);
-            b = Double.parseDouble(valores[1]);
-            numSubintervalos = Integer.parseInt(valores[2]);
-
+            
+            for(int i = 0; i < valores.length; i+=3){
+                a = Double.parseDouble(valores[i]);
+                b = Double.parseDouble(valores[i + 1]);
+                numSubintervalos = Double.parseDouble(valores[i + 2]);
+                integracao.calcularIntegracao(a, b, numSubintervalos);
+            }            
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
-        
-        System.out.println("Valor de a: " + a);
-        System.out.println("Valor de b: " + b);
-        System.out.println("Numero de subintervalos: " + numSubintervalos); 
     }
 }
