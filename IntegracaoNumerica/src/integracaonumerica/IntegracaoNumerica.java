@@ -4,12 +4,17 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
+import org.mariuszgromada.math.mxparser.*;
 
 public class IntegracaoNumerica {
     public static void main(String[] args) {
+        boolean isCallSuccessful = License.iConfirmNonCommercialUse("Elias");
+        
+        /*leitura de arquivos, comentado apenas para testes
+
         String caminhoArquivo = "C:/Users/biels/Desktop/dados.dat";
         Path path = Paths.get(caminhoArquivo);
-        Calculo integracao = new Calculo();
         
         double a = 0.0;
         double b = 0.0;
@@ -24,10 +29,13 @@ public class IntegracaoNumerica {
                 a = Double.parseDouble(valores[i]);
                 b = Double.parseDouble(valores[i + 1]);
                 numSubintervalos = Double.parseDouble(valores[i + 2]);
-                integracao.calcularIntegracao(a, b, numSubintervalos);
             }            
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
+        */
+           
+        Calculo main_calculo = new Calculo(1, 3, 6, "x*e^x");
+        System.out.println(main_calculo.CalculoSimpson());
     }
 }
