@@ -11,9 +11,17 @@ public class IntegracaoNumerica {
     public static void main(String[] args) {
         boolean isCallSuccessful = License.iConfirmNonCommercialUse("Elias");
         
-        /*leitura de arquivos, comentado apenas para testes
-
-        String caminhoArquivo = "C:/Users/biels/Desktop/dados.dat";
+        Scanner s1 = new Scanner(System.in);
+        
+        System.out.printf("Path arquivo : ");
+        String caminhoArquivo = s1.nextLine();
+        
+        System.out.printf("F(x) = ");
+        String funcao = s1.nextLine();
+        
+        System.out.printf("k = ");
+        double k = s1.nextDouble();
+   
         Path path = Paths.get(caminhoArquivo);
         
         double a = 0.0;
@@ -29,16 +37,14 @@ public class IntegracaoNumerica {
                 a = Double.parseDouble(valores[i]);
                 b = Double.parseDouble(valores[i + 1]);
                 numSubintervalos = Double.parseDouble(valores[i + 2]);
+                
+                Calculo main_calculo = new Calculo("x*e^x");
+                System.out.println("Simpson : "+ main_calculo.CalculoSimpson(a, b, numSubintervalos));
+                System.out.println("Trapezio : " + main_calculo.CalculoTrapezio(a, b, numSubintervalos));
+                System.out.println("Richardson : " + main_calculo.CalculoRichardson(a, b, numSubintervalos, k));
             }            
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
-        */
-           
-        Calculo main_calculo = new Calculo("x*e^x");
-        System.out.println(main_calculo.CalculoSimpson(1, 3, 6));
-        System.out.println(main_calculo.CalculoTrapezio(1, 3, 6));
-        double x1 = main_calculo.CalculoRichardson(1, 3, 6, 10);
-        System.out.println(x1);
     }
 }
