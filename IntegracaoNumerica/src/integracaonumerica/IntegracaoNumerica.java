@@ -35,7 +35,10 @@ public class IntegracaoNumerica {
         }
         */
            
-        Calculo main_calculo = new Calculo(1, 3, 6, "x*e^x");
-        System.out.println(main_calculo.CalculoSimpson());
+        Calculo main_calculo = new Calculo("x*e^x");
+        System.out.println(main_calculo.CalculoSimpson(1, 3, 6));
+        System.out.println(main_calculo.CalculoTrapezio(1, 3, 6));
+        double x1 = main_calculo.CalculoRichardson(1, 3, 6, 10);
+        System.out.println(x1);
     }
 }
