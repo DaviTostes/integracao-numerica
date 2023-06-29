@@ -9,6 +9,9 @@ import org.mariuszgromada.math.mxparser.*;
 
 public class IntegracaoNumerica {
     public static void main(String[] args) {
+        
+        
+        
         boolean isCallSuccessful = License.iConfirmNonCommercialUse("Elias");
         
         Scanner s1 = new Scanner(System.in);
@@ -38,7 +41,7 @@ public class IntegracaoNumerica {
                 b = Double.parseDouble(valores[i + 1]);
                 numSubintervalos = Double.parseDouble(valores[i + 2]);
                 
-                Calculo main_calculo = new Calculo("x*e^x");
+                Calculo main_calculo = new Calculo(funcao);
                 System.out.println("Simpson : "+ main_calculo.CalculoSimpson(a, b, numSubintervalos));
                 System.out.println("Trapezio : " + main_calculo.CalculoTrapezio(a, b, numSubintervalos));
                 System.out.println("Richardson : " + main_calculo.CalculoRichardson(a, b, numSubintervalos, k));
