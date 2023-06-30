@@ -1,7 +1,9 @@
 package integracaonumerica;
 
+
 import java.util.ArrayList;
 import org.mariuszgromada.math.mxparser.*;
+//rolas grossas rolas deliciosas
 
 public class Calculo {
     
