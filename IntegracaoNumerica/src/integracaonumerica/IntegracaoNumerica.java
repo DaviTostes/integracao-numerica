@@ -10,8 +10,6 @@ import org.mariuszgromada.math.mxparser.*;
 public class IntegracaoNumerica {
     public static void main(String[] args) {
         
-        
-        
         boolean isCallSuccessful = License.iConfirmNonCommercialUse("Elias");
         
         Scanner s1 = new Scanner(System.in);
@@ -22,30 +20,29 @@ public class IntegracaoNumerica {
         System.out.printf("F(x) = ");
         String funcao = s1.nextLine();
         
-        System.out.printf("k = ");
-        double k = s1.nextDouble();
+        /*System.out.printf("k = ");
+        double k = s1.nextDouble();*/
    
         Path path = Paths.get(caminhoArquivo);
         
-        double a = 0.0;
-        double b = 0.0;
-        double numSubintervalos = 0;
+        double xn = 0.0;
+        double yn = 0.0;
         
         try {
             String dados = new String(Files.readAllBytes(path));
+            Calculo main_calculo = new Calculo(funcao);
 
             String[] valores = dados.split("\n");
             
             for(int i = 0; i < valores.length; i+=3){
-                a = Double.parseDouble(valores[i]);
-                b = Double.parseDouble(valores[i + 1]);
-                numSubintervalos = Double.parseDouble(valores[i + 2]);
+                xn = Double.parseDouble(valores[i]);
+                main_calculo.AddXn(xn);
                 
-                Calculo main_calculo = new Calculo(funcao);
-                System.out.println("Simpson : "+ main_calculo.CalculoSimpson(a, b, numSubintervalos));
-                System.out.println("Trapezio : " + main_calculo.CalculoTrapezio(a, b, numSubintervalos));
-                System.out.println("Richardson : " + main_calculo.CalculoRichardson(a, b, numSubintervalos, k));
-            }            
+                yn = Double.parseDouble(valores[i + 1]);
+                main_calculo.AddYn(yn);
+            } 
+            
+            main_calculo.CalculoTrapezio();
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
