@@ -26,11 +26,24 @@ public class Calculo {
     }    
     
     
-    /*public static double CalculoSimpson() {
+    public void CalculoSimpson() {
+        double soma = 0;
+        double h = xn.get(0) - xn.get(1);
         
+        for(int i = 0; i < yn.size(); i++){
+            if(i == 0 || i == yn.size()) {
+                soma = yn.get(i);
+            } else if(i % 2 == 0) {
+                soma = yn.get(i) * 4;
+            } else if(i % 2 != 0) {
+                soma = yn.get(i) * 2;
+            }
+        }
         
-    }*/
-    
+        double resultado = soma * h / 2;
+        
+
+    }
     public void CalculoTrapezio() {
         double soma = 0;
         double h = xn.get(0) - xn.get(1);
@@ -44,7 +57,7 @@ public class Calculo {
             
         double resultado = soma * h / 2;
         
-        Argument b = new Argument("b", xn.get(xn.size()));
+        /*Argument b = new Argument("b", xn.get(xn.size()));
         Argument a = new Argument("a", xn.get(0));
         Argument n = new Argument("n", xn.size());
         Argument x = new Argument("x", xn.get(xn.size()));
@@ -52,10 +65,10 @@ public class Calculo {
         Expression error_p1 = new Expression("(-(-b-a) ^5) / (180 * n 5)", b, a, n);
         Expression error_p2 = new Expression("F(x) = der2(" + funcao + ")", x);
         
-        double erro = error_p1.calculate() * error_p2.calculate();
+        double erro = error_p1.calculate() * error_p2.calculate();*/
         
         System.out.println("Trapezio : " + resultado);
-        System.out.println("Erro : " + erro);
+        //System.out.println("Erro : " + erro);
         }
     }
     
