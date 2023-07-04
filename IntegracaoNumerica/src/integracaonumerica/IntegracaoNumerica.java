@@ -41,10 +41,10 @@ public class IntegracaoNumerica {
                 yn = Double.parseDouble(valores[i + 1]);
                 main_calculo.AddYn(yn);
             } 
-            
             main_calculo.CalculoTrapezio();
+            main_calculo.CalculoSimpson();
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
-    }
+    } 
 }
