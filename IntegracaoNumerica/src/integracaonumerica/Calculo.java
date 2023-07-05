@@ -22,11 +22,11 @@ public class Calculo {
     } 
     
     public void AddYn(double y) {
-        xn.add(y);
+        yn.add(y);
     }    
     
     
-    public void CalculoSimpson() {
+    public double CalculoSimpson() {
         double soma = 0;
         double h = xn.get(0) - xn.get(1);
         
@@ -39,12 +39,12 @@ public class Calculo {
                 soma = yn.get(i) * 2;
             }
         }
-        
-        double resultado = soma * h / 2;
-        
-
+        return soma * h / 2;
     }
-    public void CalculoTrapezio() {
+    
+    //public double ErroSimpson() {}
+    
+    public double CalculoTrapezio() {
         double soma = 0;
         double h = xn.get(0) - xn.get(1);
         
@@ -54,26 +54,20 @@ public class Calculo {
             } else {
                 soma = yn.get(i) * 2;
             }
-            
-        double resultado = soma * h / 2;
-        
-        /*Argument b = new Argument("b", xn.get(xn.size()));
-        Argument a = new Argument("a", xn.get(0));
-        Argument n = new Argument("n", xn.size());
-        Argument x = new Argument("x", xn.get(xn.size()));
-        
-        Expression error_p1 = new Expression("(-(-b-a) ^5) / (180 * n 5)", b, a, n);
-        Expression error_p2 = new Expression("F(x) = der2(" + funcao + ")", x);
-        
-        double erro = error_p1.calculate() * error_p2.calculate();*/
-        
-        System.out.println("Trapezio : " + resultado);
-        //System.out.println("Erro : " + erro);
         }
+        return soma * h / 2;
     }
     
+    //public double ErroTrapezio() {}
     
-    /*public double CalculoRichardson(double limInferior, double limSuperior, double subintervalos, double k) {     
-    }*/
+    
+    public double CalculoRichardson(double k) {
+        double I1 = CalculoTrapezio();  
+        double I2 = CalculoTrapezio() * Math.pow(k,2);
+
+        return (Math.pow(k, 2) * I2 - I1) / (Math.pow(k, 2) - 1);
+    }
+    
+    //public double ErroRichardson() {}
 }
 
