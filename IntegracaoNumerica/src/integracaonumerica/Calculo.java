@@ -9,12 +9,10 @@ public class Calculo {
     
     private ArrayList<Double> xn;
     private ArrayList<Double> yn;
-    private String funcao;
    
-    public Calculo(String funcao){
+    public Calculo(){
         this.xn = new ArrayList<>();
         this.yn = new ArrayList<>();
-        this.funcao = funcao;
     }
     
     public void AddXn(double x) {
@@ -39,7 +37,7 @@ public class Calculo {
                 soma = yn.get(i) * 2;
             }
         }
-        return soma * h / 2;
+        return soma * h / 3;
     }
     
     //public double ErroSimpson() {}

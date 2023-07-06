@@ -17,11 +17,8 @@ public class IntegracaoNumerica {
         System.out.printf("Path arquivo : ");
         String caminhoArquivo = s1.nextLine();
         
-        System.out.printf("F(x) = ");
-        String funcao = s1.nextLine();
-        
-        /*System.out.printf("k = ");
-        double k = s1.nextDouble();*/
+        System.out.printf("k = ");
+        double k = s1.nextDouble();
    
         Path path = Paths.get(caminhoArquivo);
         
@@ -30,11 +27,11 @@ public class IntegracaoNumerica {
         
         try {
             String dados = new String(Files.readAllBytes(path));
-            Calculo main_calculo = new Calculo(funcao);
+            Calculo main_calculo = new Calculo();
 
             String[] valores = dados.split("\n");
             
-            for(int i = 0; i < valores.length; i+=3){
+            for(int i = 0; i < valores.length; i+=2){
                 xn = Double.parseDouble(valores[i]);
                 main_calculo.AddXn(xn);
                 
@@ -43,6 +40,7 @@ public class IntegracaoNumerica {
             } 
             System.out.println(main_calculo.CalculoTrapezio());
             System.out.println(main_calculo.CalculoSimpson());
+            System.out.println(main_calculo.CalculoRichardson(k));
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
