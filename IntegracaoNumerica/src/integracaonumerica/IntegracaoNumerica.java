@@ -5,17 +5,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
-import org.mariuszgromada.math.mxparser.*;
 
 public class IntegracaoNumerica {
     public static void main(String[] args) {
-        
-        boolean isCallSuccessful = License.iConfirmNonCommercialUse("Elias");
         
         Scanner s1 = new Scanner(System.in);
         
         System.out.printf("Path arquivo : ");
         String caminhoArquivo = s1.nextLine();
+        
+        System.out.printf("f(x) = ");
+        String funcao = s1.nextLine();
         
         System.out.printf("k = ");
         double k = s1.nextDouble();
@@ -27,7 +27,7 @@ public class IntegracaoNumerica {
         
         try {
             String dados = new String(Files.readAllBytes(path));
-            Calculo main_calculo = new Calculo();
+            Calculo main_calculo = new Calculo(funcao);
 
             String[] valores = dados.split("\n");
             
