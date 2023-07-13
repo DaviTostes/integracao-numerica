@@ -27,7 +27,7 @@ public class IntegracaoNumerica {
         
         try {
             String dados = new String(Files.readAllBytes(path));
-            Calculo main_calculo = new Calculo(funcao);
+            Calculo main_calculo = new Calculo(funcao, k);
 
             String[] valores = dados.split("\n");
             
@@ -40,7 +40,7 @@ public class IntegracaoNumerica {
             } 
             System.out.println(main_calculo.CalculoTrapezio());
             System.out.println(main_calculo.CalculoSimpson());
-            System.out.println(main_calculo.CalculoRichardson(k));
+            System.out.println(main_calculo.CalculoRichardson());
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
