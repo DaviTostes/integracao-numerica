@@ -10,16 +10,8 @@ import java.util.ArrayList;
  *
  * @author ellia
  */
-class Trapezio {
-    private ArrayList<Double> xn;
-    private ArrayList<Double> yn;
-   
-    public Trapezio(ArrayList xn, ArrayList yn){
-        this.xn = xn;
-        this.yn = yn;
-    }
-    
-    public double calculoTrapezio() {
+class Trapezio {    
+    public double calculoTrapezio(ArrayList<Double> xn, ArrayList<Double> yn) {
         double soma = 0;
         double h = xn.get(1) - xn.get(0);
         
@@ -34,8 +26,4 @@ class Trapezio {
     }
     
     //public double erroTrapezio() {}
-    
-    public double getN() {
-        return xn.size();
-    }
 }

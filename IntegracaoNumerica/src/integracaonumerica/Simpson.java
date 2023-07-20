@@ -2,16 +2,8 @@ package integracaonumerica;
 
 import java.util.ArrayList;
 
-public class Simpson {
-    private ArrayList<Double> xn;
-    private ArrayList<Double> yn;
-   
-    public Simpson(ArrayList xn, ArrayList yn){
-        this.xn = xn;
-        this.yn = yn;
-    }
-    
-    public double calculoSimpson() {
+public class Simpson {    
+    public double calculoSimpson(ArrayList<Double> xn, ArrayList<Double> yn) {
         double soma = 0;
         double h = xn.get(1) - xn.get(0);
         double resultado = 0;
@@ -27,7 +19,7 @@ public class Simpson {
                 }
             }
             resultado = soma * (h / 3);
-        } else if (yn.size() % 2 != 0 && yn.size() % 3 == 0) {
+        } else if (yn.size() % 3 == 0) {
             for (int i = 0; i < yn.size(); i++) {
                 if (i == 0 || i == yn.size() - 1) {
                     soma += yn.get(i);

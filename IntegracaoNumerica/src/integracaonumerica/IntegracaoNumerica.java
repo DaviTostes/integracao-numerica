@@ -1,9 +1,11 @@
 package integracaonumerica;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class IntegracaoNumerica {
@@ -15,17 +17,32 @@ public class IntegracaoNumerica {
    
         Path path = Paths.get(caminhoArquivo);
         
-        double xn = 0.0;
-        double yn = 0.0;
+        ArrayList<Double> xn = new ArrayList<>();
+        ArrayList<Double> yn = new ArrayList<>();
+
+        int subIntervalos = 0;
+
+        while(subIntervalos <= 1) {
+            System.out.print("Digite a quantidade de subintervalos (2 ou mais): ");
+            subIntervalos = s1.nextInt();
+        } 
         
-        try {
-            String dados = new String(Files.readAllBytes(path));
+        try(BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
+            String linha = "";
 
-            String[] valores = dados.split("\n");
-            
-            for(int i = 0; i < valores.length; i+=2){
-            } 
+            while((linha = br.readLine()) != null && xn.size() < subIntervalos) {
+                String x = linha.split("\\s+")[0];
+                String y = linha.split("\\s+")[1];
 
+                xn.add(Double.parseDouble(x));
+                yn.add(Double.parseDouble(y));
+            }
+
+            Trapezio trap = new Trapezio();
+
+            Simpson sinpos = new Simpson();
+
+            System.out.println(trap.calculoTrapezio(xn, yn));
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
