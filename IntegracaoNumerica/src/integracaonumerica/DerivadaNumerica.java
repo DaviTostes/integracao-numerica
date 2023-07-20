@@ -4,6 +4,20 @@
  */
 package integracaonumerica;
 
+import java.util.ArrayList;
+
 class DerivadaNumerica {
+    private ArrayList<Double> xn = new ArrayList<>();
+    private ArrayList<Double> yn = new ArrayList<>();
+
+    public DerivadaNumerica(ArrayList xn, ArrayList yn) {
+        this.xn = xn;
+        this.xn = xn;
+    }
     
+    
+
+    
+
+
 }
