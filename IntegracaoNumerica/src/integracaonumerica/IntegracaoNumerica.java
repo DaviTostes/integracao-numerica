@@ -21,7 +21,7 @@ public class IntegracaoNumerica {
         ArrayList<Double> yn = new ArrayList<>();
 
         int subIntervalos = 0;
-
+        
         while(subIntervalos <= 1) {
             System.out.print("Digite a quantidade de subintervalos (2 ou mais): ");
             subIntervalos = s1.nextInt();
@@ -34,15 +34,24 @@ public class IntegracaoNumerica {
                 String x = linha.split("\\s+")[0];
                 String y = linha.split("\\s+")[1];
 
-                xn.add(Double.parseDouble(x));
-                yn.add(Double.parseDouble(y));
+                xn.add(Double.valueOf(x));
+                yn.add(Double.valueOf(y));
             }
 
-            Trapezio trap = new Trapezio();
+            Trapezio t1 = new Trapezio(xn, yn);
+            
+            UmTercoSimpson uts1 = new UmTercoSimpson(xn, yn);
+            
+            TresOitavosSimpson tos1 = new TresOitavosSimpson(xn, yn);
+            
+            //ExtrapolacaoRichardson er1 = new ExtrapolacaoRichardson(t1, t2);
+            
+            System.out.println(t1.calculoTrapezio());
+            
+            System.out.println(uts1.umTercoSimpson());
+            
+            System.out.println(tos1.tresOitavosSimpson());
 
-            Simpson sinpos = new Simpson();
-
-            System.out.println(trap.calculoTrapezio(xn, yn));
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
