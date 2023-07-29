@@ -3,8 +3,6 @@ package integracaonumerica;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,17 +12,18 @@ public class IntegracaoNumerica {
         
         System.out.printf("Path arquivo : ");
         String caminhoArquivo = s1.nextLine();
-   
-        Path path = Paths.get(caminhoArquivo);
         
         ArrayList<Double> xn = new ArrayList<>();
         ArrayList<Double> yn = new ArrayList<>();
+
+        ArrayList<Double> xn2 = new ArrayList<>();
+        ArrayList<Double> yn2 = new ArrayList<>();
 
         int subIntervalos = 0;
         
         while(subIntervalos <= 1) {
             System.out.print("Digite a quantidade de subintervalos (2 ou mais): ");
-            subIntervalos = s1.nextInt();
+            subIntervalos = s1.nextInt()+1;
         } 
         
         try(BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
@@ -38,22 +37,56 @@ public class IntegracaoNumerica {
                 yn.add(Double.valueOf(y));
             }
 
-            Trapezio t1 = new Trapezio(xn, yn);
-            
-            UmTercoSimpson uts1 = new UmTercoSimpson(xn, yn);
-            
-            TresOitavosSimpson tos1 = new TresOitavosSimpson(xn, yn);
-            
-            //ExtrapolacaoRichardson er1 = new ExtrapolacaoRichardson(t1, t2);
-            
-            System.out.println(t1.calculoTrapezio());
-            
-            System.out.println(uts1.umTercoSimpson());
-            
-            System.out.println(tos1.tresOitavosSimpson());
+        } catch (IOException e) {
+            System.out.println("Erro ao ler o arquivo: " + e.getMessage());
+        }
+
+         Scanner s2 = new Scanner(System.in);
+
+        System.out.printf("Path arquivo : ");
+        String caminhoArquivo2 = s2.nextLine();
+
+        subIntervalos = 0;
+        
+        while(subIntervalos <= 1) {
+            System.out.print("Digite a quantidade de subintervalos (2 ou mais): ");
+            subIntervalos = s2.nextInt()+1;
+        } 
+
+        try(BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo2))) {
+            String linha = "";
+
+            while((linha = br.readLine()) != null && xn.size() < subIntervalos) {
+                String x = linha.split("\\s+")[0];
+                String y = linha.split("\\s+")[1];
+
+                xn2.add(Double.valueOf(x));
+                yn2.add(Double.valueOf(y));
+            }
 
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
+
+        Trapezio t1 = new Trapezio(xn, yn);
+
+        Trapezio t2 = new Trapezio(xn2, yn2);
+            
+        UmTercoSimpson uts1 = new UmTercoSimpson(xn, yn);
+            
+        TresOitavosSimpson tos1 = new TresOitavosSimpson(xn, yn);
+            
+         ExtrapolacaoRichardson er1 = new ExtrapolacaoRichardson(t1, t2);
+            
+        System.out.println("Trapézio: "+t1.calculoTrapezio());
+        System.out.println("Trapézio2: "+t2.calculoTrapezio());
+            
+        System.out.println("Um terço de Simpson: "+uts1.umTercoSimpson());
+            
+        System.out.println("três oitavos de Simpson: "+tos1.tresOitavosSimpson());
+
+        System.out.println("Richardson: "+er1.calculoRichardson());
+
+        s1.close();
     } 
 }
