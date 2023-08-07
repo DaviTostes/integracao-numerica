@@ -11,7 +11,6 @@ public class Resultado extends JFrame {
     public Resultado(int subintervalos, double resultado) {
         System.out.println(resultado);
         setTitle("Seletor de metodo");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(1000, 500);
         setResizable(false);
         setLayout(new FlowLayout());

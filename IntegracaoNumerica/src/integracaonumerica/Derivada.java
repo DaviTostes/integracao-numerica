@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package integracaonumerica;
 
 import java.util.ArrayList;
 
-class DerivadaNumerica {    
+class Derivada {    
     public double DerivadaQuarta(ArrayList<Double> xn, ArrayList<Double> yn) {
         // Verificar se existem pelo menos cinco pontos para calcular a derivada quarta
         if (xn.size() < 5 || yn.size() < 5) {

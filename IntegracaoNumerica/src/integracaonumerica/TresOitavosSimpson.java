@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package integracaonumerica;
 
 import java.util.ArrayList;
@@ -17,7 +13,7 @@ public class TresOitavosSimpson {
         this.h = xn.get(1) - xn.get(0);
     }
     
-    public double tresOitavosSimpson() {
+    public double calculoTresOitavosSimpson() {
         double soma = 0;
         double h = xn.get(1) - xn.get(0);
       

@@ -18,11 +18,18 @@ public class LeitorDeArquivo extends JFrame {
     private JCheckBox foldersOnlyCheckbox;
     private ArrayList<Double> xn = new ArrayList<>();
     private ArrayList<Double> yn = new ArrayList<>();
-    private Trapezio trapezio;
+    private Trapezio trapezio1;
+    private Trapezio trapezio2;
+    private TresOitavosSimpson tresOitavosSimpson;
+    private UmTercoSimpson umTercoSimpson;
+    private Richardson richardson;
+    private Derivada derivada;
+    private String metodoSelecionado;
 
-    public LeitorDeArquivo() {
+    public LeitorDeArquivo(String metodoSelecionado) {
+        this.metodoSelecionado = metodoSelecionado;
+        
         setTitle("Seletor de Arquivos e Pastas");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500, 150);
         setResizable(false); // Desabilita o redimensionamento da janela
         setLayout(new FlowLayout());
@@ -89,13 +96,48 @@ public class LeitorDeArquivo extends JFrame {
                                     yn.add(Double.valueOf(y));
                                 }
 
-                                trapezio = new Trapezio(xn, yn);
-
-                                new Resultado(subIntervalos, trapezio.calculoTrapezio()).setVisible(true);
-                                 
-                            } catch (IOException ex) {
+                            } 
+                            catch (IOException ex) {
                                 System.out.println("Erro ao ler o arquivo: " + ex.getMessage());
                             }
+                            
+                            if(metodoSelecionado == "Trapezio"){
+                                JOptionPane.showMessageDialog(null, "Executando o método: " + metodoSelecionado);
+                                
+                                trapezio1 = new Trapezio(xn, yn);
+                                trapezio2 = new Trapezio(xn, yn);
+
+                                new Resultado(subIntervalos, trapezio1.calculoTrapezio()).setVisible(true);
+                            }
+                            
+                            if(metodoSelecionado == "SimpsonTresOitavos"){
+                                JOptionPane.showMessageDialog(null, "Executando o método: " + metodoSelecionado);
+                                
+                                tresOitavosSimpson = new TresOitavosSimpson(xn, yn);
+
+                                new Resultado(subIntervalos, tresOitavosSimpson.calculoTresOitavosSimpson()).setVisible(true);
+                            }
+                            
+                            if(metodoSelecionado == "SimpsonUmTerco"){
+                                JOptionPane.showMessageDialog(null, "Executando o método: " + metodoSelecionado);
+                                
+                                umTercoSimpson = new UmTercoSimpson(xn, yn);
+
+                                new Resultado(subIntervalos, umTercoSimpson.calculoUmTercoSimpson()).setVisible(true);
+                            }
+                            
+                            if(metodoSelecionado == "Richardson"){
+                                JOptionPane.showMessageDialog(null, "Executando o método: " + metodoSelecionado);
+                                
+                                richardson = new Richardson(trapezio1, trapezio2);
+
+                                new Resultado(subIntervalos, richardson.calculoRichardson()).setVisible(true);
+                            }
+                            
+                            if(metodoSelecionado == "Derivada"){
+                                JOptionPane.showMessageDialog(null, "Executando o método: " + metodoSelecionado);
+                                
+                            }                  
 
                         } catch (Exception ex) {
                             JOptionPane.showMessageDialog(null, "Não foi possível abrir o arquivo.", "Erro", JOptionPane.ERROR_MESSAGE);

@@ -13,7 +13,7 @@ public class UmTercoSimpson {
         this.h = xn.get(1) - xn.get(0);
     }
     
-    public double umTercoSimpson() {
+    public double calculoUmTercoSimpson() {
         double soma = 0;
         double h = xn.get(1) - xn.get(0);
 

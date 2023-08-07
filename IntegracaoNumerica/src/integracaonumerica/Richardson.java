@@ -1,16 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package integracaonumerica;
 
 import java.util.ArrayList;
 
-class ExtrapolacaoRichardson{
+class Richardson{
     private Trapezio I1;
     private Trapezio I2;
     
-    public ExtrapolacaoRichardson(Trapezio I1, Trapezio I2) {
+    public Richardson(Trapezio I1, Trapezio I2) {
         this.I1 = I1;
         this.I2 = I2;
     }

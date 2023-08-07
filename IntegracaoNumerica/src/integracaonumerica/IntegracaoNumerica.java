@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class IntegracaoNumerica {
-    public static void main(String[] args) {
+    public IntegracaoNumerica(){
         Scanner s1 = new Scanner(System.in);
         
         System.out.printf("Path arquivo : ");
@@ -76,17 +76,17 @@ public class IntegracaoNumerica {
             
         TresOitavosSimpson tos1 = new TresOitavosSimpson(xn, yn);
             
-         ExtrapolacaoRichardson er1 = new ExtrapolacaoRichardson(t1, t2);
+         Richardson er1 = new Richardson(t1, t2);
             
         System.out.println("Trapézio: "+t1.calculoTrapezio());
         System.out.println("Trapézio2: "+t2.calculoTrapezio());
             
-        System.out.println("Um terço de Simpson: "+uts1.umTercoSimpson());
+        System.out.println("Um terço de Simpson: "+uts1.calculoUmTercoSimpson());
             
-        System.out.println("três oitavos de Simpson: "+tos1.tresOitavosSimpson());
+        System.out.println("três oitavos de Simpson: "+tos1.calculoTresOitavosSimpson());
 
         System.out.println("Richardson: "+er1.calculoRichardson());
 
         s1.close();
-    } 
+    }
 }
