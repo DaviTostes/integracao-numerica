@@ -18,7 +18,6 @@ public class InterfaceMain extends JFrame {
     private JButton btnTrapezio;
     private JButton btnSimpson;
     private JButton btnRichardson;
-    private JButton btnDerivada;
 
     public InterfaceMain(){
         setTitle("Seletor de metodo");
@@ -62,25 +61,14 @@ public class InterfaceMain extends JFrame {
 
         btnRichardson.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new LeitorDeArquivo("Richardson").setVisible(true);
-            }
-        });
-        
-        btnDerivada = new JButton("Derivada");
-        btnDerivada.setFont(new Font("Arial", Font.BOLD, 14));
-
-        btnDerivada.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new LeitorDeArquivo("Derivada").setVisible(true);
+                new LeitorDeArquivoRichardson().setVisible(true);
             }
         });
  
         add(label);
-        
         add(btnTrapezio);                
-        add(btnSimpson);                
+        add(btnSimpson);
         add(btnRichardson);               
-        add(btnDerivada);
     }
     
     public static void main(String[] args) {
