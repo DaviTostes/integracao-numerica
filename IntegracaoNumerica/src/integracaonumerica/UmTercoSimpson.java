@@ -30,6 +30,11 @@ public class UmTercoSimpson {
     }
     
     public double erro(double dif_quarta) {
-       return (Math.pow(h*(-1), 5) / (180 * (Math.pow(xn.size(), 5)))) * dif_quarta;
+       double a = xn.get(0);
+       double b = xn.get(xn.size()-1);
+       double n = (b - a) / h;
+       
+       double x = (-1 * Math.pow(h , 5)) / (180 * (Math.pow(n, 5)));
+       return x * dif_quarta;
     }
 }

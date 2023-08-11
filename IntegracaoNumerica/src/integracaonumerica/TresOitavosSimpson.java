@@ -30,6 +30,7 @@ public class TresOitavosSimpson {
     }
     
     public double erro(double dif_quarta) {
-        return (Math.pow(h*(-1), 5) / (80 * (Math.pow(xn.size(), 4)))) * dif_quarta;
+        double x =  (3 * Math.pow(h, 5)) / 80;
+        return x * dif_quarta;
     }
 }
