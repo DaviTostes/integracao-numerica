@@ -27,7 +27,7 @@ class Trapezio {
     }
     
     public double erro(double dif_segunda) {
-        return (Math.pow(h*(-1), 3) / 12) * dif_segunda;
+        return (Math.pow(xn.get(xn.size()-1)-xn.get(0), 2) / (12*Math.pow(xn.size()-1, 2))) * dif_segunda;
     }
     
     public double getN() {

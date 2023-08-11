@@ -102,10 +102,12 @@ public class LeitorDeArquivo extends JFrame {
                                 System.out.println("Erro ao ler o arquivo: " + ex.getMessage());
                             }
 
+                            Derivada derivada = new Derivada(subIntervalos, xn, yn);
+
                             if(metodoSelecionado == "Trapezio"){
                                 trapezio1 = new Trapezio(xn, yn);
 
-                                new Resultado(subIntervalos, trapezio1.calculoTrapezio()).setVisible(true);
+                                new Resultado(subIntervalos, trapezio1.calculoTrapezio(), trapezio1.erro(derivada.DerivadaSegunda())).setVisible(true);
                                 xn.clear();
                                 yn.clear();
                             }
@@ -113,7 +115,7 @@ public class LeitorDeArquivo extends JFrame {
                             if(metodoSelecionado == "SimpsonTresOitavos"){                                
                                 tresOitavosSimpson = new TresOitavosSimpson(xn, yn);
 
-                                new Resultado(subIntervalos, tresOitavosSimpson.calculoTresOitavosSimpson()).setVisible(true);
+                                new Resultado(subIntervalos, tresOitavosSimpson.calculoTresOitavosSimpson(), tresOitavosSimpson.erro(derivada.DerivadaSegunda())).setVisible(true);
                                 xn.clear();
                                 yn.clear();
                             }
@@ -121,7 +123,7 @@ public class LeitorDeArquivo extends JFrame {
                             if(metodoSelecionado == "SimpsonUmTerco"){                             
                                 umTercoSimpson = new UmTercoSimpson(xn, yn);
 
-                                new Resultado(subIntervalos, umTercoSimpson.calculoUmTercoSimpson()).setVisible(true);
+                                new Resultado(subIntervalos, umTercoSimpson.calculoUmTercoSimpson(), umTercoSimpson.erro(derivada.DerivadaSegunda())).setVisible(true);
                                 xn.clear();
                                 yn.clear();
                             }

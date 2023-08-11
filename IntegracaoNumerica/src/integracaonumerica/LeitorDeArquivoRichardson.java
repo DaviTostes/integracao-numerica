@@ -166,7 +166,9 @@ public class LeitorDeArquivoRichardson extends JFrame {
 
                                 Richardson richardson = new Richardson(trapezio1, trapezio2);
 
-                                new Resultado(subIntervalos, richardson.calculoRichardson()).setVisible(true);;
+
+                                System.out.println(richardson.calculoRichardson());
+                                new Resultado(subIntervalos, richardson.calculoRichardson(), 0).setVisible(true);;
                                 
                                 xn.clear();
                                 yn.clear();

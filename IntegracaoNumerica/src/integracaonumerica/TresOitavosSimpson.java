@@ -29,7 +29,7 @@ public class TresOitavosSimpson {
         return soma * (h *  3/8);
     }
     
-    public double Erro(double dif_quarta) {
+    public double erro(double dif_quarta) {
         return (Math.pow(h*(-1), 5) / (80 * (Math.pow(xn.size(), 4)))) * dif_quarta;
     }
 }

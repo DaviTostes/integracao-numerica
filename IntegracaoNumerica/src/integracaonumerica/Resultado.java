@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Resultado extends JFrame {
-    public Resultado(int subintervalos, double resultado) {
+    public Resultado(int subintervalos, double resultado, double erro) {
         setTitle("Seletor de metodo");
         setSize(1000, 500);
         setResizable(false);
@@ -19,8 +19,12 @@ public class Resultado extends JFrame {
         int y = (tamanhoTela.height - 500) / 2;
         setLocation(x, y);
 
-        JLabel label = new JLabel("Resultado: "+String.format("%.5f", resultado));
+        JLabel labelResult = new JLabel("Resultado: "+String.format("%.5f", resultado));
+        JLabel labelSubintervalos = new JLabel("Subintervalos: "+(subintervalos-1));
+        JLabel labelErro = new JLabel("Erro: "+erro);
 
-        add(label);
+        add(labelResult);
+        add(labelSubintervalos);
+        add(labelErro);
     }
 }
