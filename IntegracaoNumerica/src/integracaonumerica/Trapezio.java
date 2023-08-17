@@ -23,11 +23,12 @@ class Trapezio {
                 soma += yn.get(i) * 2;
             }
         }
-        return soma * (h / 2);
+        double resultado = soma * (h / 2);
+        return resultado;
     }
     
-    public double erro(double dif_segunda) {
-        double x = (Math.pow(h, 3) * -1) / (12 * Math.pow(getN(), 2));
+      public double erro(double dif_segunda) {
+        double x = (Math.pow(h* -1, 3) ) / (12 * Math.pow(getN(), 2));
         return  x * dif_segunda;
     }
     

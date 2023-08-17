@@ -15,9 +15,9 @@ class Richardson{
         double resultado_I1 = I1.calculoTrapezio();
         double resultado_I2 = I2.calculoTrapezio();
 
-        double n1 = I1.getN();
-        double n2 = I2.getN();
+        double n1_p = Math.pow(I1.getN(), 2);
+        double n2_p = Math.pow(I2.getN(), 2);
         
-        return (resultado_I2 + (Math.pow(n1-1, 2) / ((Math.pow(n2-1, 2) - Math.pow(n1-1, 2)))) * (resultado_I2 - resultado_I1));
+        return resultado_I2 + ((n1_p / (n2_p - n1_p)) * (resultado_I2 - resultado_I1));
     }
 }
