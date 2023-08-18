@@ -24,10 +24,8 @@ public class LeitorDeArquivoRichardson extends JFrame {
     private ArrayList<Double> yn = new ArrayList<>();
     private ArrayList<Double> xn2 = new ArrayList<>();
     private ArrayList<Double> yn2 = new ArrayList<>();
-    private UmTercoSimpson trapezio1;
-    private UmTercoSimpson trapezio2;
 
-    public LeitorDeArquivoRichardson() {
+    public LeitorDeArquivoRichardson(String metodoSelecionado) {
         setTitle("Seletor de Arquivos e Pastas");
         setSize(500, 200);
         setResizable(false); // Desabilita o redimensionamento da janela
@@ -126,8 +124,6 @@ public class LeitorDeArquivoRichardson extends JFrame {
                                         yn.add(Double.valueOf(y));
                                     }
                                 }
-
-                                trapezio1 = new UmTercoSimpson(xn, yn);
                             } 
                             catch (IOException ex) {
                                 System.out.println("Erro ao ler o arquivo: " + ex.getMessage());
@@ -162,14 +158,30 @@ public class LeitorDeArquivoRichardson extends JFrame {
                                     }
                                 }
 
-                                trapezio2 = new UmTercoSimpson(xn2, yn2);
+                                if(metodoSelecionado == "Trapezio") {
+                                    Trapezio m1 = new Trapezio(xn, yn);
+                                    Trapezio m2 = new Trapezio(xn2, yn2);
+                                    Richardson richas = new Richardson(m1, m2);
 
-                                Richardson richardson = new Richardson(trapezio1, trapezio2);
+                                    new ResultadoRichardson(m1.calculo(), m2.calculo(), richas.calculoRichardson()).setVisible(true);
+                                }
 
+                                if(metodoSelecionado == "SimpsonTresOitavos") {
+                                    TresOitavosSimpson m1 = new TresOitavosSimpson(xn, yn);
+                                    TresOitavosSimpson m2 = new TresOitavosSimpson(xn2, yn2);
+                                    Richardson richas = new Richardson(m1, m2);
 
-                                System.out.println(richardson.calculoRichardson());
-                                new Resultado(subIntervalos,trapezio1.calculoUmTercoSimpson(), trapezio2.calculoUmTercoSimpson(), richardson.calculoRichardson(), 0).setVisible(true);;
-                                
+                                    new ResultadoRichardson(m1.calculo(), m2.calculo(), richas.calculoRichardson()).setVisible(true);
+                                }
+
+                                if(metodoSelecionado == "SimpsonUmTerco") {
+                                    UmTercoSimpson m1 = new UmTercoSimpson(xn, yn);
+                                    UmTercoSimpson m2 = new UmTercoSimpson(xn2, yn2);
+                                    Richardson richas = new Richardson(m1, m2);
+
+                                    new ResultadoRichardson(m1.calculo(), m2.calculo(), richas.calculoRichardson()).setVisible(true);
+                                }
+
                                 xn.clear();
                                 yn.clear();
                                 xn2.clear();

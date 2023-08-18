@@ -61,7 +61,7 @@ public class InterfaceMain extends JFrame {
 
         btnRichardson.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new LeitorDeArquivoRichardson().setVisible(true);
+                new RichardsonSelect().setVisible(true);
             }
         });
  
