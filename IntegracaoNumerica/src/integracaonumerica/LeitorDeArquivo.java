@@ -97,9 +97,22 @@ public class LeitorDeArquivo extends JFrame {
                                         yn.add(Double.valueOf(y));
                                     }
                                 }
+
+                                // if(metodoSelecionado == "SimpsonTresOitavos" || metodoSelecionado == "SimpsonUmTerco") {
+                                //     if((subIntervalos) < 5) {
+                                //         throw new IOException("Quantidade de subintervalos é insuficiente", null);
+                                //     }
+                                // }
+
+                                if(metodoSelecionado == "Trapezio") {
+                                    if((subIntervalos) < 3) {
+                                        throw new IOException("Quantidade de subintervalos é insuficiente", null);
+                                    }
+                                }
                             } 
                             catch (IOException ex) {
-                                System.out.println("Erro ao ler o arquivo: " + ex.getMessage());
+                                JOptionPane.showMessageDialog(null, "Erro ao ler o arquivo:"+ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                                dispose();
                             }
 
                             Derivada derivada = new Derivada(subIntervalos, xn, yn);
@@ -107,7 +120,7 @@ public class LeitorDeArquivo extends JFrame {
                             if(metodoSelecionado == "Trapezio"){
                                 trapezio1 = new Trapezio(xn, yn);
 
-                                new Resultado(subIntervalos, trapezio1.calculoTrapezio(), trapezio1.erro(derivada.DerivadaSegunda())).setVisible(true);
+                                new Resultado(subIntervalos,0, 0, trapezio1.calculoTrapezio(), trapezio1.erro(derivada.DerivadaSegunda())).setVisible(true);
                                 xn.clear();
                                 yn.clear();
                             }
@@ -115,7 +128,7 @@ public class LeitorDeArquivo extends JFrame {
                             if(metodoSelecionado == "SimpsonTresOitavos"){                                
                                 tresOitavosSimpson = new TresOitavosSimpson(xn, yn);
 
-                                new Resultado(subIntervalos, tresOitavosSimpson.calculoTresOitavosSimpson(), tresOitavosSimpson.erro(derivada.DerivadaSegunda())).setVisible(true);
+                                new Resultado(subIntervalos,0, 0, tresOitavosSimpson.calculoTresOitavosSimpson(), tresOitavosSimpson.erro(derivada.DerivadaSegunda())).setVisible(true);
                                 xn.clear();
                                 yn.clear();
                             }
@@ -123,7 +136,7 @@ public class LeitorDeArquivo extends JFrame {
                             if(metodoSelecionado == "SimpsonUmTerco"){                             
                                 umTercoSimpson = new UmTercoSimpson(xn, yn);
 
-                                new Resultado(subIntervalos, umTercoSimpson.calculoUmTercoSimpson(), umTercoSimpson.erro(derivada.DerivadaSegunda())).setVisible(true);
+                                new Resultado(subIntervalos,0, 0, umTercoSimpson.calculoUmTercoSimpson(), umTercoSimpson.erro(derivada.DerivadaSegunda())).setVisible(true);
                                 xn.clear();
                                 yn.clear();
                             }

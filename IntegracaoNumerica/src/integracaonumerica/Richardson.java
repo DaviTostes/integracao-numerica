@@ -1,19 +1,17 @@
 package integracaonumerica;
 
-import java.util.ArrayList;
-
 class Richardson{
-    private Trapezio I1;
-    private Trapezio I2;
+    private UmTercoSimpson I1;
+    private UmTercoSimpson I2;
     
-    public Richardson(Trapezio I1, Trapezio I2) {
+    public Richardson(UmTercoSimpson I1, UmTercoSimpson I2) {
         this.I1 = I1;
         this.I2 = I2;
     }
     
     public double calculoRichardson() {
-        double resultado_I1 = I1.calculoTrapezio();
-        double resultado_I2 = I2.calculoTrapezio();
+        double resultado_I1 = I1.calculoUmTercoSimpson();
+        double resultado_I2 = I2.calculoUmTercoSimpson();
 
         double n1_p = Math.pow(I1.getN(), 2);
         double n2_p = Math.pow(I2.getN(), 2);

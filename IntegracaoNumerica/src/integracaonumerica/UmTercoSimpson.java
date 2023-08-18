@@ -10,7 +10,7 @@ public class UmTercoSimpson {
     public UmTercoSimpson(ArrayList<Double> xn, ArrayList<Double> yn) {
         this.xn = xn;
         this.yn = yn;
-        this.h = xn.get(1) - xn.get(0);
+        this.h = (xn.get(xn.size()-1) - xn.get(0)) / (xn.size()-1);
     }
     
     public double calculoUmTercoSimpson() {
@@ -18,7 +18,8 @@ public class UmTercoSimpson {
         double h = xn.get(1) - xn.get(0);
 
         for (int i = 0; i < yn.size(); i++) {
-            if (i == 0 || i == yn.size() - 1) {
+            System.out.println(yn.get(i));
+            if (i == 0 || i == yn.size()-1) {
                 soma += yn.get(i);
             } else if (i % 2 == 0) {
                 soma += yn.get(i) * 2;
@@ -30,11 +31,14 @@ public class UmTercoSimpson {
     }
     
     public double erro(double dif_quarta) {
-       double a = xn.get(0);
-       double b = xn.get(xn.size()-1);
-       double n = (b - a) / h;
-       
-       double x = (-1 * Math.pow(h , 5)) / (180 * (Math.pow(n, 5)));
+       double b = xn.get(xn.size()-1) - xn.get(0);
+       double n = xn.size() - 1;
+
+       double x = (Math.pow(b , 5)) / (180 * (Math.pow(n, 4)));
        return x * dif_quarta;
+    }
+
+    public double getN() {
+        return (xn.get(xn.size()-1) - xn.get(0)) / h; 
     }
 }

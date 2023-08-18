@@ -24,8 +24,8 @@ public class LeitorDeArquivoRichardson extends JFrame {
     private ArrayList<Double> yn = new ArrayList<>();
     private ArrayList<Double> xn2 = new ArrayList<>();
     private ArrayList<Double> yn2 = new ArrayList<>();
-    private Trapezio trapezio1;
-    private Trapezio trapezio2;
+    private UmTercoSimpson trapezio1;
+    private UmTercoSimpson trapezio2;
 
     public LeitorDeArquivoRichardson() {
         setTitle("Seletor de Arquivos e Pastas");
@@ -127,7 +127,7 @@ public class LeitorDeArquivoRichardson extends JFrame {
                                     }
                                 }
 
-                                trapezio1 = new Trapezio(xn, yn);
+                                trapezio1 = new UmTercoSimpson(xn, yn);
                             } 
                             catch (IOException ex) {
                                 System.out.println("Erro ao ler o arquivo: " + ex.getMessage());
@@ -162,13 +162,13 @@ public class LeitorDeArquivoRichardson extends JFrame {
                                     }
                                 }
 
-                                trapezio2 = new Trapezio(xn2, yn2);
+                                trapezio2 = new UmTercoSimpson(xn2, yn2);
 
                                 Richardson richardson = new Richardson(trapezio1, trapezio2);
 
 
                                 System.out.println(richardson.calculoRichardson());
-                                new Resultado(subIntervalos, richardson.calculoRichardson(), 0).setVisible(true);;
+                                new Resultado(subIntervalos,trapezio1.calculoUmTercoSimpson(), trapezio2.calculoUmTercoSimpson(), richardson.calculoRichardson(), 0).setVisible(true);;
                                 
                                 xn.clear();
                                 yn.clear();
@@ -195,12 +195,12 @@ public class LeitorDeArquivoRichardson extends JFrame {
         add(filePathTextField);
         add(openButton);
         add(numberLabel2);
-        add(numberTextField2);
+        add(numberTextField);
         add(label2);
         add(filePathTextField2);
         add(openButton2);
         add(numberLabel);
-        add(numberTextField);
+        add(numberTextField2);
         add(executeButton);
         add(foldersOnlyCheckbox);
     }

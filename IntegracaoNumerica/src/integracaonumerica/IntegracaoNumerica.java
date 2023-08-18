@@ -76,7 +76,7 @@ public class IntegracaoNumerica {
             
         TresOitavosSimpson tos1 = new TresOitavosSimpson(xn, yn);
             
-         Richardson er1 = new Richardson(t1, t2);
+        Richardson er1 = new Richardson(t1, t2);
             
         System.out.println("Trapézio: "+t1.calculoTrapezio());
         System.out.println("Trapézio2: "+t2.calculoTrapezio());
