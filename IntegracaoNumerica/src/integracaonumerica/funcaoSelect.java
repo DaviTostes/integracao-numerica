@@ -10,12 +10,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class SimpsonSelect extends JFrame{
-    private JButton btnSimpsonOitavos;
-    private JButton btnSimpsonTerco;
+public class funcaoSelect extends JFrame{
+    private JButton btnFuncao;
+    private JButton btnPontos;
 
-    public SimpsonSelect(){
-        setTitle("Selecionar Metodo de Simpson");
+    public funcaoSelect(String metodoSelecionado){
+        setTitle("Selecione por qual forma eseja calcular esse metodo");
         setSize(350, 250);
         setResizable(false); // Desabilita o redimensionamento da janela
         setLayout(new FlowLayout());
@@ -25,30 +25,30 @@ public class SimpsonSelect extends JFrame{
         int y = (tamanhoTela.height - 250) / 2;
         setLocation(x, y);
 
-        JLabel label = new JLabel("Selecione o método desejado para Simpson\n");
+        JLabel label = new JLabel("Selecione o meio desejado\n");
 
-        btnSimpsonOitavos = new JButton("Tres Oitavos");
-        btnSimpsonOitavos.setFont(new Font("Arial", Font.BOLD, 14));
+        btnFuncao = new JButton("Funcao");
+        btnFuncao.setFont(new Font("Arial", Font.BOLD, 14));
 
-        btnSimpsonOitavos.addActionListener(new ActionListener() {
+        btnFuncao.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new funcaoSelect("SimpsonTresOitavos").setVisible(true);
+                new InserirFuncao(metodoSelecionado).setVisible(true);
                 dispose();
             }
         });
 
-        btnSimpsonTerco = new JButton("Um Terço");
-        btnSimpsonTerco.setFont(new Font("Arial", Font.BOLD, 14));
+        btnPontos = new JButton("Pontos");
+        btnPontos.setFont(new Font("Arial", Font.BOLD, 14));
 
-        btnSimpsonTerco.addActionListener(new ActionListener() {
+        btnPontos.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new funcaoSelect("SimpsonUmTerco").setVisible(true);
+                new LeitorDeArquivo(metodoSelecionado).setVisible(true);
                 dispose();
             }
         });
 
         add(label);       
-        add(btnSimpsonOitavos);
-        add(btnSimpsonTerco);
+        add(btnFuncao);
+        add(btnPontos);
     }
 }

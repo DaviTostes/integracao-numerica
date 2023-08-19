@@ -43,7 +43,7 @@ public class InterfaceMain extends JFrame {
 
         btnTrapezio.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new LeitorDeArquivo("Trapezio").setVisible(true);
+                new funcaoSelect("Trapezio").setVisible(true);
             }
         });
         

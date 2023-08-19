@@ -27,7 +27,7 @@ public class LeitorDeArquivoRichardson extends JFrame {
 
     public LeitorDeArquivoRichardson(String metodoSelecionado) {
         setTitle("Seletor de Arquivos e Pastas");
-        setSize(500, 200);
+        setSize(500, 300);
         setResizable(false); // Desabilita o redimensionamento da janela
         setLayout(new FlowLayout());
         
