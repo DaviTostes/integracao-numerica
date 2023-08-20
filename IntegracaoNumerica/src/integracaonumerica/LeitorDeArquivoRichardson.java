@@ -161,7 +161,7 @@ public class LeitorDeArquivoRichardson extends JFrame {
                                 if(metodoSelecionado == "Trapezio") {
                                     Trapezio m1 = new Trapezio(xn, yn);
                                     Trapezio m2 = new Trapezio(xn2, yn2);
-                                    Richardson richas = new Richardson(m1, m2);
+                                    Richardson richas = new Richardson(m1, m2, metodoSelecionado);
 
                                     new ResultadoRichardson(m1.calculo(), m2.calculo(), richas.calculoRichardson()).setVisible(true);
                                 }
@@ -169,7 +169,7 @@ public class LeitorDeArquivoRichardson extends JFrame {
                                 if(metodoSelecionado == "SimpsonTresOitavos") {
                                     TresOitavosSimpson m1 = new TresOitavosSimpson(xn, yn);
                                     TresOitavosSimpson m2 = new TresOitavosSimpson(xn2, yn2);
-                                    Richardson richas = new Richardson(m1, m2);
+                                    Richardson richas = new Richardson(m1, m2, metodoSelecionado);
 
                                     new ResultadoRichardson(m1.calculo(), m2.calculo(), richas.calculoRichardson()).setVisible(true);
                                 }
@@ -177,7 +177,7 @@ public class LeitorDeArquivoRichardson extends JFrame {
                                 if(metodoSelecionado == "SimpsonUmTerco") {
                                     UmTercoSimpson m1 = new UmTercoSimpson(xn, yn);
                                     UmTercoSimpson m2 = new UmTercoSimpson(xn2, yn2);
-                                    Richardson richas = new Richardson(m1, m2);
+                                    Richardson richas = new Richardson(m1, m2, metodoSelecionado);
 
                                     new ResultadoRichardson(m1.calculo(), m2.calculo(), richas.calculoRichardson()).setVisible(true);
                                 }
