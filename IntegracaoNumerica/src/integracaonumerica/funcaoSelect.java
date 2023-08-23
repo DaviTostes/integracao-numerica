@@ -32,7 +32,11 @@ public class funcaoSelect extends JFrame{
 
         btnFuncao.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new InserirFuncao(metodoSelecionado).setVisible(true);
+                if(metodoSelecionado.contains("-R")) {
+                    new InserirFuncaoRichardson(metodoSelecionado).setVisible(true);
+                } else {
+                    new InserirFuncao(metodoSelecionado).setVisible(true);
+                }
                 dispose();
             }
         });

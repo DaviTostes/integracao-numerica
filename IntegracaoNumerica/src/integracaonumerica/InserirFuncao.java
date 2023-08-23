@@ -66,19 +66,19 @@ public class InserirFuncao extends JFrame {
                 if(metodoSelecionado == "Trapezio") {
                     Trapezio trap = new Trapezio(xn, yn);
 
-                    new Resultado(subIntervalos, trap.calculo(), trap.erro(derivada.DerivadaSegunda())).setVisible(true);
+                    new Resultado(subIntervalos, trap.calculo(), trap.erro(derivada.DerivadaSegunda()), xn, yn).setVisible(true);
                 }
 
                 if(metodoSelecionado == "SimpsonTresOitavos") {
                     TresOitavosSimpson tresoit = new TresOitavosSimpson(xn, yn);
 
-                    new Resultado(subIntervalos, tresoit.calculo(), tresoit.erro(derivada.DerivadaQuarta())).setVisible(true);
+                    new Resultado(subIntervalos, tresoit.calculo(), tresoit.erro(derivada.DerivadaQuarta()), xn, yn).setVisible(true);
                 }
 
                 if(metodoSelecionado == "SimpsonUmTerco") {
                     UmTercoSimpson umter = new UmTercoSimpson(xn, yn);
 
-                    new Resultado(subIntervalos, umter.calculo(), umter.erro(derivada.DerivadaQuarta())).setVisible(true);
+                    new Resultado(subIntervalos, umter.calculo(), umter.erro(derivada.DerivadaQuarta()), xn, yn).setVisible(true);
                 }
             }
         });

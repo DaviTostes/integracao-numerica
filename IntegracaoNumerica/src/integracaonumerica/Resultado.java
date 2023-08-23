@@ -3,12 +3,15 @@ package integracaonumerica;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class Resultado extends JFrame {
-    public Resultado(int subintervalos, double resultadoF, double erro) {
+    public Resultado(int subintervalos, double resultadoF, double erro, ArrayList<Double> xn, ArrayList<Double> yn) {
         setTitle("Seletor de metodo");
         setSize(1000, 500);
         setResizable(false);
@@ -23,8 +26,23 @@ public class Resultado extends JFrame {
         JLabel labelSubintervalos = new JLabel("Subintervalos: "+(subintervalos-1));
         JLabel labelErro = new JLabel("Erro: "+erro);
 
+        Object[][] data = new Object[xn.size()][2];
+        String[] columnNames = {"X", "Y"};
+
+        data[0][0] = "X";
+        data[0][1] = "Y";
+        for(int i=1; i <xn.size(); i++) {
+            data[i][0] = xn.get(i);
+            data[i][1] = yn.get(i);
+        }
+
+        DefaultTableModel model = new DefaultTableModel(data, columnNames);
+
+        JTable table = new JTable(model);
+
         add(labelResultF);
         add(labelSubintervalos);
         add(labelErro);
+        add(table);
     }
 }

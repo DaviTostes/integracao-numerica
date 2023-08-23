@@ -33,7 +33,7 @@ public class RichardsonSelect extends JFrame{
 
         btnTrapezio.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new LeitorDeArquivoRichardson("Trapezio").setVisible(true);
+                new funcaoSelect("Trapezio-R").setVisible(true);
                 dispose();
             }
         });
@@ -43,7 +43,7 @@ public class RichardsonSelect extends JFrame{
 
         btnSimpsonOitavos.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new LeitorDeArquivoRichardson("SimpsonTresOitavos").setVisible(true);
+                new funcaoSelect("SimpsonTresOitavos-R").setVisible(true);
                 dispose();
             }
         });
@@ -53,7 +53,7 @@ public class RichardsonSelect extends JFrame{
 
         btnSimpsonTerco.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new LeitorDeArquivoRichardson("SimpsonUmTerco").setVisible(true);
+                new funcaoSelect("SimpsonUmTerco-R").setVisible(true);
                 dispose();
             }
         });
