@@ -124,7 +124,7 @@ public class LeitorArquivo extends javax.swing.JFrame {
         fieldPath = new javax.swing.JTextField();
         fieldNum = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(500, 300));
         setResizable(false);
 

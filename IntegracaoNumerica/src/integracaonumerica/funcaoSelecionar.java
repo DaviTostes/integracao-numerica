@@ -13,9 +13,9 @@ public class funcaoSelecionar extends javax.swing.JFrame {
         btnFuncao.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(metodoSelecionado.contains("-R")) {
-                    new InserirFuncaoRichardson(metodoSelecionado).setVisible(true);
+                    new funcaoInserirRichardson(metodoSelecionado).setVisible(true);
                 } else {
-                    new InserirFuncao(metodoSelecionado).setVisible(true);
+                    new funcaoInserir(metodoSelecionado).setVisible(true);
                 }
                 dispose();
             }
@@ -23,7 +23,7 @@ public class funcaoSelecionar extends javax.swing.JFrame {
         
         btnPontos.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new LeitorDeArquivo(metodoSelecionado).setVisible(true);
+                new LeitorArquivo(metodoSelecionado).setVisible(true);
                 dispose();
             }
         });
@@ -42,7 +42,7 @@ public class funcaoSelecionar extends javax.swing.JFrame {
         btnFuncao = new javax.swing.JButton();
         btnPontos = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         btnFuncao.setText("Função");
 

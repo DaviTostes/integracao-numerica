@@ -46,7 +46,12 @@ public class funcaoSelect extends JFrame{
 
         btnPontos.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new LeitorDeArquivo(metodoSelecionado).setVisible(true);
+                if(metodoSelecionado.contains("-R")) {
+                    new LeitorDeArquivoRichardson(metodoSelecionado).setVisible(true);
+                }
+                else{
+                    new LeitorDeArquivo(metodoSelecionado).setVisible(true);
+                }
                 dispose();
             }
         });

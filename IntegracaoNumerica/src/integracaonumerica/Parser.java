@@ -15,7 +15,7 @@ public class Parser {
         this.funcao = funcao;
         this.intervalo_inf = intervalo_inf;
         this.intervalo_sup = intervalo_sup;
-        this.nmr_subintervalos = nmr_subintervalos;
+        this.nmr_subintervalos = nmr_subintervalos - 1;
     }
     
     public ArrayList<Double> getXn() {

@@ -12,21 +12,21 @@ public class richardsonSelecionar extends javax.swing.JFrame {
         
         btnTrapezio.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new funcaoSelect("Trapezio-R").setVisible(true);
+                new funcaoSelecionar("Trapezio-R").setVisible(true);
                 dispose();
             }
         });
         
         btnSimpsonOitavos.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new funcaoSelect("SimpsonTresOitavos-R").setVisible(true);
+                new funcaoSelecionar("SimpsonTresOitavos-R").setVisible(true);
                 dispose();
             }
         });
         
         btnSimpsonTerco.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new funcaoSelect("SimpsonUmTerco-R").setVisible(true);
+                new funcaoSelecionar("SimpsonUmTerco-R").setVisible(true);
                 dispose();
             }
         });
@@ -47,7 +47,7 @@ public class richardsonSelecionar extends javax.swing.JFrame {
         btnSimpsonTerco = new javax.swing.JButton();
         btnTrapezio = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Selecione o método desejado para RIchardson");
 

@@ -12,14 +12,14 @@ public class simpsonSelecionar extends javax.swing.JFrame {
         
         btnSimpsonOitavos.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new funcaoSelect("SimpsonTresOitavos").setVisible(true);
+                new funcaoSelecionar("SimpsonTresOitavos").setVisible(true);
                 dispose();
             }
         });
         
         btnSimpsonTerco.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new funcaoSelect("SimpsonUmTerco").setVisible(true);
+                new funcaoSelecionar("SimpsonUmTerco").setVisible(true);
                 dispose();
             }
         });
@@ -38,7 +38,7 @@ public class simpsonSelecionar extends javax.swing.JFrame {
         btnSimpsonOitavos = new javax.swing.JButton();
         btnSimpsonTerco = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         btnSimpsonOitavos.setText("Simpson Oitavos");
 

@@ -20,19 +20,19 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
         btnTrapezio.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new funcaoSelect("Trapezio").setVisible(true);
+                new funcaoSelecionar("Trapezio").setVisible(true);
             }
         });
         
         btnSimpson.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new SimpsonSelect().setVisible(true);
+                new simpsonSelecionar().setVisible(true);
             }
         });
         
         btnRichardson.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new RichardsonSelect().setVisible(true);
+                new richardsonSelecionar().setVisible(true);
             }
         });
         
