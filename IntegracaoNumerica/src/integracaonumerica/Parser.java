@@ -1,9 +1,11 @@
 package integracaonumerica;
 
 import java.util.ArrayList;
-//import org.mariuszgromada.math.mxparser.*;
+import org.mariuszgromada.math.mxparser.*;
 
 public class Parser {
+    boolean isCallSuccessful = License.iConfirmNonCommercialUse("Elias, Davi, Alan, Gabriel");
+    
     private String funcao;
     private double intervalo_inf; 
     private double intervalo_sup;
@@ -34,12 +36,12 @@ public class Parser {
         ArrayList<Double> yn = new ArrayList<>();
 
         for(int i = 0; i < xn.size(); i++) {
-           // Argument x = new Argument("x", xn.get(i));
-           // Expression expressao = new Expression(funcao, x);
+            Argument x = new Argument("x", xn.get(i));
+            Expression expressao = new Expression(funcao, x);
             
-           // double resultado = expressao.calculate();
+            double resultado = expressao.calculate();
             
-           // yn.add(resultado);
+            yn.add(resultado);
         }
         return yn;
     }

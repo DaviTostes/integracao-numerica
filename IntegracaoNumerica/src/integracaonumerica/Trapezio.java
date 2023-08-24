@@ -23,8 +23,8 @@ class Trapezio extends Metodo{
     }
     
     public double erro(double dif_segunda) {
-        double b = xn.get(xn.size()-1) - xn.get(0);
-        double x = (Math.pow(b * -1, 3) ) / (12 * Math.pow(getN(), 2));
+        double b_a = xn.get(xn.size()-1) - xn.get(0);
+        double x = (Math.pow(b_a * -1, 3) ) / (12 * Math.pow(getN(), 2));
         return  x * dif_segunda;
     }
 }

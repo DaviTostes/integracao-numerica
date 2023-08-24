@@ -3,6 +3,7 @@ package integracaonumerica;
 import java.util.ArrayList;
 
 class Derivada {
+    
     private ArrayList<Double> xn;
     private ArrayList<Double> yn;
     private double h;
@@ -15,7 +16,14 @@ class Derivada {
     
     public double DerivadaSegunda() {
         double derivada = (yn.get(0) - (2 * yn.get(1)) + yn.get(2)) * (1 / Math.pow(h, 2));
-        return derivada ;
+        
+        /*
+        BigDecimal arredondar=BigDecimal.valueOf(derivada);
+        arredondar=arredondar.setScale(2, RoundingMode.HALF_UP);
+        double derivada_arredondada = arredondar.doubleValue();
+        */
+        
+        return derivada;
     }
     
     public double DerivadaQuarta() {

@@ -25,10 +25,10 @@ public class UmTercoSimpson extends Metodo {
     }
     
     public double erro(double dif_quarta) {
-       double b = xn.get(xn.size()-1) - xn.get(0);
+       double b_a = xn.get(xn.size()-1) - xn.get(0);
        double n = xn.size() - 1;
 
-       double x = (Math.pow(b , 5)) / (180 * (Math.pow(n, 4)));
+       double x = (Math.pow(b_a * -1 , 5)) / (180 * (Math.pow(n, 4)));
        return x * dif_quarta;
     }
 }
