@@ -75,7 +75,7 @@ public class LeitorArquivo extends javax.swing.JFrame {
                             if(metodoSelecionado == "Trapezio"){
                                 trapezio1 = new Trapezio(xn, yn);
 
-                                //new Resultado(subIntervalos, trapezio1.calculo(), trapezio1.erro(derivada.DerivadaSegunda())).setVisible(true);
+                                new Result(subIntervalos, trapezio1.calculo(), trapezio1.erro(derivada.DerivadaSegunda()), xn, yn).setVisible(true);
                                 xn.clear();
                                 yn.clear();
                             }
@@ -83,7 +83,7 @@ public class LeitorArquivo extends javax.swing.JFrame {
                             if(metodoSelecionado == "SimpsonTresOitavos"){                                
                                 tresOitavosSimpson = new TresOitavosSimpson(xn, yn);
 
-                                //new Resultado(subIntervalos, tresOitavosSimpson.calculo(), tresOitavosSimpson.erro(derivada.DerivadaSegunda())).setVisible(true);
+                                new Result(subIntervalos, tresOitavosSimpson.calculo(), tresOitavosSimpson.erro(derivada.DerivadaSegunda()), xn, yn).setVisible(true);
                                 xn.clear();
                                 yn.clear();
                             }
@@ -91,7 +91,7 @@ public class LeitorArquivo extends javax.swing.JFrame {
                             if(metodoSelecionado == "SimpsonUmTerco"){                             
                                 umTercoSimpson = new UmTercoSimpson(xn, yn);
 
-                                //new Resultado(subIntervalos, umTercoSimpson.calculo(), umTercoSimpson.erro(derivada.DerivadaSegunda())).setVisible(true);
+                                new Resultado(subIntervalos, umTercoSimpson.calculo(), umTercoSimpson.erro(derivada.DerivadaSegunda()), xn, yn).setVisible(true);
                                 xn.clear();
                                 yn.clear();
                             }

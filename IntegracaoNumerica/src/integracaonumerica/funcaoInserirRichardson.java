@@ -34,7 +34,7 @@ public class funcaoInserirRichardson extends javax.swing.JFrame {
 
                     Richardson richas = new Richardson(trap1, trap2, metodoSelecionado);
 
-                    new ResultRichardson(trap1.calculo(), trap2.calculo(), richas.calculoRichardson()).setVisible(true);
+                    new ResultRichardson(trap1.calculo(), trap2.calculo(), richas.calculoRichardson(), xn, yn, xn2, yn2).setVisible(true);
                 }
 
                 if(metodoSelecionado == "SimpsonTresOitavos-R") {
@@ -43,7 +43,7 @@ public class funcaoInserirRichardson extends javax.swing.JFrame {
 
                     Richardson richas = new Richardson(tresoit1, tresoit2, metodoSelecionado);
 
-                    new ResultRichardson(tresoit1.calculo(), tresoit2.calculo(), richas.calculoRichardson()).setVisible(true);
+                    new ResultRichardson(tresoit1.calculo(), tresoit2.calculo(), richas.calculoRichardson(), xn, yn, xn2, yn2).setVisible(true);
                 }
 
                 if(metodoSelecionado == "SimpsonUmTerco-R") {
@@ -52,7 +52,7 @@ public class funcaoInserirRichardson extends javax.swing.JFrame {
 
                     Richardson richas = new Richardson(umter1, umter2, metodoSelecionado);
 
-                    new ResultRichardson(umter1.calculo(), umter2.calculo(), richas.calculoRichardson()).setVisible(true);
+                    new ResultRichardson(umter1.calculo(), umter2.calculo(), richas.calculoRichardson(), xn, yn, xn2, yn2).setVisible(true);
                 }
             }
         });

@@ -2,15 +2,35 @@ package integracaonumerica;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 public class ResultRichardson extends javax.swing.JFrame {
 
-    public ResultRichardson(double resultado1, double resultado2, double resultadoF) {
+    public ResultRichardson(double resultado1, double resultado2, double resultadoF, ArrayList<Double> xn, ArrayList<Double> yn,
+             ArrayList<Double> xn2, ArrayList<Double> yn2) {
         initComponents();
         
         labelResult1.setText("Valor Primeira Integral: " + String.format("%.5f", resultado1));
         labelResult2.setText("Valor Segunda Integral: " + String.format("%.5f", resultado2));
         labelResultF.setText("Valor Melhorado da Integral: " + String.format("%.5f", resultadoF));
+        
+        Object[][] data = new Object[xn.size()][2];
+        Object[][] data2 = new Object[xn2.size()][2];
+        String[] columnNames = {"X", "Y"};
+       
+        for(int i=0; i <xn.size(); i++) {
+            data[i][0] = xn.get(i);
+            data[i][1] = yn.get(i);
+        }
+        
+        for(int i=0; i <xn2.size(); i++) {
+            data2[i][0] = xn2.get(i);
+            data2[i][1] = yn2.get(i);
+        }
+
+        jTable1.setModel(new DefaultTableModel(data, columnNames));
+        jTable2.setModel(new DefaultTableModel(data2, columnNames));
         
         // Centraliza a janela na tela
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -18,8 +38,6 @@ public class ResultRichardson extends javax.swing.JFrame {
         int y = (screenSize.height - getHeight()) / 2;
         setLocation(x, y);
     }
-
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -33,6 +51,7 @@ public class ResultRichardson extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(700, 450));
+        setPreferredSize(new java.awt.Dimension(900, 450));
 
         labelResult1.setText(null);
 
