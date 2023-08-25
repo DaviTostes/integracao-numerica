@@ -13,7 +13,7 @@ public class funcaoInserir extends javax.swing.JFrame {
         
         btnExecutar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                int subIntervalos = Integer.parseInt(subTextField.getText())+1;
+                int subIntervalos = Integer.parseInt(subTextField.getText());
 
                 Parser parser = new Parser(funcTextField.getText(), Double.parseDouble(infTextField.getText()), Double.parseDouble(supTextField.getText()), 
                 subIntervalos);

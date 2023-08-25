@@ -11,7 +11,7 @@ public class Result extends javax.swing.JFrame {
         initComponents();
         
         labelResultF.setText("Resultado Final: " + String.format("%.5f", resultadoF));
-        labelSubintervalos.setText("Subintervalos: " + (subintervalos-1));
+        labelSubintervalos.setText("Subintervalos: " + (subintervalos+1));
         labelErro.setText("Erro: " + erro);
         
         Object[][] data = new Object[xn.size()][2];
