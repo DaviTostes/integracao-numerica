@@ -23,15 +23,13 @@ public class Resultado extends JFrame {
         setLocation(x, y);
 
         JLabel labelResultF = new JLabel("Resultado Final: "+String.format("%.5f", resultadoF));
-        JLabel labelSubintervalos = new JLabel("Subintervalos: "+(subintervalos-1));
+        JLabel labelSubintervalos = new JLabel("Subintervalos: "+subintervalos);
         JLabel labelErro = new JLabel("Erro: "+erro);
 
         Object[][] data = new Object[xn.size()][2];
         String[] columnNames = {"X", "Y"};
-
-        data[0][0] = "X";
-        data[0][1] = "Y";
-        for(int i=1; i <xn.size(); i++) {
+       
+        for(int i=0; i <xn.size(); i++) {
             data[i][0] = xn.get(i);
             data[i][1] = yn.get(i);
         }

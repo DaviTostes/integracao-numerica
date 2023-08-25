@@ -15,24 +15,27 @@ public class Parser {
         this.funcao = funcao;
         this.intervalo_inf = intervalo_inf;
         this.intervalo_sup = intervalo_sup;
-        this.nmr_subintervalos = nmr_subintervalos - 1;
+        this.nmr_subintervalos = nmr_subintervalos;
     }
     
     public ArrayList<Double> getXn() {
         ArrayList<Double> xn = new ArrayList<>();
         double h = (intervalo_sup - intervalo_inf) / nmr_subintervalos;
         double x = intervalo_inf;
+        xn.add(intervalo_inf);
         
-        for(double i = 0; i <= nmr_subintervalos; i++) {
+        while(xn.size() != nmr_subintervalos+1) {
+            if(xn.size() == nmr_subintervalos+1) {
+                xn.add(intervalo_sup);
+                break;
+            }
+            x += h;
             xn.add(x);
-            x+= h;
-            System.out.println(x);
         }
         return xn;
     }
     
-    public ArrayList<Double> getYn() {
-        ArrayList<Double> xn = getXn();
+    public ArrayList<Double> getYn(ArrayList<Double> xn) {;
         ArrayList<Double> yn = new ArrayList<>();
 
         for(int i = 0; i < xn.size(); i++) {

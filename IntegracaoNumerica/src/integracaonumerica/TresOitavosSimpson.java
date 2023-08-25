@@ -10,19 +10,23 @@ public class TresOitavosSimpson extends Metodo {
     }
 
     public double calculo() {
-        double soma = 0;
+        ArrayList<Double> calcs = new ArrayList<>();
         double h = xn.get(1) - xn.get(0);
       
         for (int i = 0; i < yn.size(); i++) {
             if (i == 0 || i == yn.size() - 1) {
-                soma += yn.get(i);
+                calcs.add(yn.get(i));
             } else if (i % 3 != 0) {
-                soma += yn.get(i) * 3;
+                calcs.add(yn.get(i) * 3);
             } else if (i % 3 == 0) {
-                soma += yn.get(i) * 2;
+                calcs.add(yn.get(i) * 2);
             }
         }
-        return soma * (h *  3/8);
+        double soma = 0;
+        for(double n : calcs) {
+            soma+= n;
+        }
+        return  ((h *  3)/8)*soma;
     }
     
     public double erro(double dif_quarta) {

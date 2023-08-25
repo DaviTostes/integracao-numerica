@@ -53,13 +53,13 @@ public class InserirFuncao extends JFrame {
 
         btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                int subIntervalos = Integer.parseInt(SubTextField.getText())+1;
+                int subIntervalos = Integer.parseInt(SubTextField.getText());
 
                 Parser parser = new Parser(funcTextField.getText(), Double.parseDouble(InfTextField.getText()), Double.parseDouble(SupTextField.getText()), 
                 subIntervalos);
 
                 ArrayList<Double> xn = parser.getXn();
-                ArrayList<Double> yn = parser.getYn();
+                ArrayList<Double> yn = parser.getYn(xn);
 
                 Derivada derivada = new Derivada(subIntervalos, xn, yn);
 
@@ -72,13 +72,13 @@ public class InserirFuncao extends JFrame {
                 if(metodoSelecionado == "SimpsonTresOitavos") {
                     TresOitavosSimpson tresoit = new TresOitavosSimpson(xn, yn);
 
-                    new Resultado(subIntervalos, tresoit.calculo(), tresoit.erro(derivada.DerivadaQuarta()), xn, yn).setVisible(true);
+                    new Resultado(subIntervalos, tresoit.calculo(), yn.size() > 4 ? tresoit.erro(derivada.DerivadaQuarta()) : 0, xn, yn).setVisible(true);
                 }
 
                 if(metodoSelecionado == "SimpsonUmTerco") {
                     UmTercoSimpson umter = new UmTercoSimpson(xn, yn);
 
-                    new Resultado(subIntervalos, umter.calculo(), umter.erro(derivada.DerivadaQuarta()), xn, yn).setVisible(true);
+                    new Resultado(subIntervalos, umter.calculo(), yn.size() > 4 ? umter.erro(derivada.DerivadaQuarta()) : 0, xn, yn).setVisible(true);
                 }
             }
         });

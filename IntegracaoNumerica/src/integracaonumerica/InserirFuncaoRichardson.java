@@ -54,8 +54,8 @@ public class InserirFuncaoRichardson extends JFrame {
 
         btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                int subIntervalos1 = Integer.parseInt(SubTextField1.getText())+1;
-                int subIntervalos2 = Integer.parseInt(SubTextField2.getText())+1;
+                int subIntervalos1 = Integer.parseInt(SubTextField1.getText());
+                int subIntervalos2 = Integer.parseInt(SubTextField2.getText());
 
                 Parser parser1 = new Parser(funcTextField.getText(), Double.parseDouble(InfTextField.getText()), Double.parseDouble(SupTextField.getText()), 
                 subIntervalos1);
@@ -64,10 +64,10 @@ public class InserirFuncaoRichardson extends JFrame {
                 subIntervalos2);
 
                 ArrayList<Double> xn = parser1.getXn();
-                ArrayList<Double> yn = parser1.getYn();
+                ArrayList<Double> yn = parser1.getYn(xn);
 
                 ArrayList<Double> xn2 = parser2.getXn();
-                ArrayList<Double> yn2 = parser2.getYn();
+                ArrayList<Double> yn2 = parser2.getYn(xn2);
 
                 if(metodoSelecionado == "Trapezio-R") {
                     Trapezio trap1 = new Trapezio(xn, yn);
