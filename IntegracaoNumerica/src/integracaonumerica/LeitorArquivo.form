@@ -109,6 +109,7 @@
           <Font name="Arial" size="12" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Abrir"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -129,6 +130,7 @@
           <Font name="Arial" size="12" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Executar"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

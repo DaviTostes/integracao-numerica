@@ -168,11 +168,13 @@ public class LeitorArquivo extends javax.swing.JFrame {
 
         btnAbrir.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnAbrir.setText("Abrir");
+        btnAbrir.setFocusPainted(false);
         getContentPane().add(btnAbrir, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, -1, -1));
         getContentPane().add(fieldNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 72, -1));
 
         btnExecutar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnExecutar.setText("Executar");
+        btnExecutar.setFocusPainted(false);
         getContentPane().add(btnExecutar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
 
         pack();

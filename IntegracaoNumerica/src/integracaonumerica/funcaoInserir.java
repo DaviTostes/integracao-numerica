@@ -26,19 +26,19 @@ public class funcaoInserir extends javax.swing.JFrame {
                 if(metodoSelecionado == "Trapezio") {
                     Trapezio trap = new Trapezio(xn, yn);
 
-                    new Resultado(subIntervalos, trap.calculo(), trap.erro(derivada.DerivadaSegunda()), xn, yn).setVisible(true);
+                    new Result(subIntervalos, trap.calculo(), trap.erro(derivada.DerivadaSegunda()), xn, yn).setVisible(true);
                 }
 
                 if(metodoSelecionado == "SimpsonTresOitavos") {
                     TresOitavosSimpson tresoit = new TresOitavosSimpson(xn, yn);
 
-                    new Resultado(subIntervalos, tresoit.calculo(), tresoit.erro(derivada.DerivadaQuarta()), xn, yn).setVisible(true);
+                    new Result(subIntervalos, tresoit.calculo(), tresoit.erro(derivada.DerivadaQuarta()), xn, yn).setVisible(true);
                 }
 
                 if(metodoSelecionado == "SimpsonUmTerco") {
                     UmTercoSimpson umter = new UmTercoSimpson(xn, yn);
 
-                    new Resultado(subIntervalos, umter.calculo(), umter.erro(derivada.DerivadaQuarta()), xn, yn).setVisible(true);
+                    new Result(subIntervalos, umter.calculo(), umter.erro(derivada.DerivadaQuarta()), xn, yn).setVisible(true);
                 }
             }
         });

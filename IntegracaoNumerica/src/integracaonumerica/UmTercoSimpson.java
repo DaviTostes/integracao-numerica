@@ -28,7 +28,7 @@ public class UmTercoSimpson extends Metodo {
        double b_a = xn.get(xn.size()-1) - xn.get(0);
        double n = xn.size() - 1;
 
-       double x = (Math.pow(b_a * -1 , 5)) / (180 * (Math.pow(n, 4)));
+       double x = (Math.pow(b_a, 5)) / (180 * (Math.pow(n, 4)));
        return x * dif_quarta;
     }
 }
