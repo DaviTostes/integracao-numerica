@@ -23,7 +23,11 @@ public class funcaoSelecionar extends javax.swing.JFrame {
         
         btnPontos.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new LeitorArquivo(metodoSelecionado).setVisible(true);
+                if(metodoSelecionado.contains("-R")) {
+                    new LeitorArquivoRichardson(metodoSelecionado).setVisible(true);
+                } else{
+                    new LeitorArquivo(metodoSelecionado).setVisible(true);
+                }  
                 dispose();
             }
         });
@@ -41,32 +45,46 @@ public class funcaoSelecionar extends javax.swing.JFrame {
 
         btnFuncao = new javax.swing.JButton();
         btnPontos = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(316, 175));
 
+        btnFuncao.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnFuncao.setText("Função");
+        btnFuncao.setFocusPainted(false);
 
+        btnPontos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnPontos.setText("Pontos");
+        btnPontos.setFocusPainted(false);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setText("Selecione o meio a ser calculado");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(btnFuncao)
-                .addGap(33, 33, 33)
-                .addComponent(btnPontos)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnFuncao)
+                        .addGap(70, 70, 70)
+                        .addComponent(btnPontos))
+                    .addComponent(jLabel1))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(155, Short.MAX_VALUE)
+                .addGap(48, 48, 48)
+                .addComponent(jLabel1)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnFuncao)
                     .addComponent(btnPontos))
-                .addGap(122, 122, 122))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         pack();
@@ -75,5 +93,6 @@ public class funcaoSelecionar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFuncao;
     private javax.swing.JButton btnPontos;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,34 +35,48 @@ public class simpsonSelecionar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnSimpsonOitavos = new javax.swing.JButton();
         btnSimpsonTerco = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        btnSimpsonOitavos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(391, 243));
 
-        btnSimpsonOitavos.setText("Simpson Oitavos");
+        btnSimpsonTerco.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnSimpsonTerco.setText("Um Terço");
+        btnSimpsonTerco.setFocusPainted(false);
 
-        btnSimpsonTerco.setText("Simpson Terco");
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel1.setText("Selecione a regra de Simpson");
+
+        btnSimpsonOitavos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnSimpsonOitavos.setText("Três Oitavos");
+        btnSimpsonOitavos.setFocusPainted(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(btnSimpsonOitavos)
-                .addGap(43, 43, 43)
-                .addComponent(btnSimpsonTerco)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addGap(62, 62, 62)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSimpsonTerco)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSimpsonOitavos))
+                    .addComponent(jLabel1))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(140, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSimpsonOitavos)
-                    .addComponent(btnSimpsonTerco))
-                .addGap(137, 137, 137))
+                    .addComponent(btnSimpsonOitavos, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSimpsonTerco, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(73, 73, 73))
         );
 
         pack();
@@ -71,5 +85,6 @@ public class simpsonSelecionar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSimpsonOitavos;
     private javax.swing.JButton btnSimpsonTerco;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

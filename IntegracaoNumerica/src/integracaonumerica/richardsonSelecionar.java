@@ -49,43 +49,48 @@ public class richardsonSelecionar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("Selecione o método desejado para RIchardson");
 
+        btnSimpsonOitavos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnSimpsonOitavos.setText("Três Oitavos");
+        btnSimpsonOitavos.setFocusPainted(false);
 
+        btnSimpsonTerco.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnSimpsonTerco.setText("Um Terço");
+        btnSimpsonTerco.setFocusPainted(false);
 
+        btnTrapezio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnTrapezio.setText("Trapézio");
+        btnTrapezio.setFocusPainted(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
                         .addComponent(btnTrapezio)
+                        .addGap(24, 24, 24)
+                        .addComponent(btnSimpsonTerco)
                         .addGap(18, 18, 18)
-                        .addComponent(btnSimpsonOitavos)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSimpsonTerco))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jLabel1)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                        .addComponent(btnSimpsonOitavos)))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(74, 74, 74)
+                .addGap(87, 87, 87)
                 .addComponent(jLabel1)
-                .addGap(43, 43, 43)
+                .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSimpsonOitavos)
-                    .addComponent(btnSimpsonTerco)
-                    .addComponent(btnTrapezio))
-                .addContainerGap(144, Short.MAX_VALUE))
+                    .addComponent(btnTrapezio)
+                    .addComponent(btnSimpsonTerco))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         pack();
